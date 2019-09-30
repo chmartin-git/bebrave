@@ -1,21 +1,22 @@
 import React from 'react'
-import {BrowserRouter, Route} from 'react-router-dom'
-import Home from './Pages/Home'
-import Parent from './Pages/Parent'
-import Signup from './Pages/Signup'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import Home from './components/Pages/Home/Home'
+import Parent from './components/Pages/Parent/Parent'
+import Signup from './components/Pages/Signup/Signup'
 
 class App extends React.Component {
-    constructor(props){
-        super(props);
-    }
 
     render() {
         return (
                 <BrowserRouter>
-                    <Route exact path="/" component={Home}/>
-                    <Route exact path="/signup" component={Signup}/>
-                    <Route exact path="/inscription" component={Signup}/>
-                    <Route exact path="/parent" component={Parent} />
+                    {
+                        // PUT ALWAYS DISPLAYED THINGS HERE
+                    }<Switch>
+                        <Route exact path="/" component={Home}/>
+                        <Route path="/signup" component={Signup}/>
+                        <Route path="/inscription" component={Signup}/>
+                        <Route path="/parent" component={Parent} />
+                    </Switch>
                 </BrowserRouter>
         );
     }
