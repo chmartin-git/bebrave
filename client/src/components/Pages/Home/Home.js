@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <div className="home">
             <Navbar />
-            <Main />
+            <Main title="BEBRAVE"/>
         </div>
     )
 };
