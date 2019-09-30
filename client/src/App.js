@@ -9,9 +9,7 @@ class App extends React.Component {
     render() {
         return (
                 <BrowserRouter>
-                    {
-                        // PUT ALWAYS DISPLAYED THINGS HERE
-                    }<Switch>
+                    <Switch>
                         <Route exact path="/" component={Home}/>
                         <Route path="/signup" component={Signup}/>
                         <Route path="/inscription" component={Signup}/>
