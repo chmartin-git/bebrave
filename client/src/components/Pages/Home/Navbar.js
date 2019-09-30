@@ -6,12 +6,12 @@ const Navbar = () => {
             <div className="navbar">
                 <div className="button-wrapper">
                     <div className="button-inner">
-                        <button>
+                        <button className="button-login">
                             CONNEXION
                         </button>
                     </div>
                     <div className="button-inner">
-                        <button>
+                        <button className="button-signup">
                             INSCRIPTION
                         </button>
                     </div>

@@ -4,6 +4,7 @@
     @include right
     width: 100%
     height: 10%
+    background-color: #4b4b4b
     .button-wrapper
         @include center
         width: 20%
@@ -12,7 +13,21 @@
             @include center
             height: 100%
             flex: 0.5
-            background-color: #ff8244
+
             button
-                width: 60%
-                height: 50%
+                width: 65%
+                height: 40%
+                border: none
+                color: white
+                cursor: pointer
+                transition: all 0.2s ease-in
+
+            .button-login
+                background-color: #2ecc71
+                &:hover
+                    background-color: #27aa5e
+
+            .button-signup
+                background-color: #4f9ae1
+                &:hover
+                    background-color: #376b9c
