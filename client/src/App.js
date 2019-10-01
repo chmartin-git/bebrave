@@ -5,7 +5,6 @@ import Parent from './components/Pages/Parent/Parent'
 import Signup from './components/Pages/Signup/Signup'
 
 class App extends React.Component {
-
     render() {
         return (
                 <BrowserRouter>
@@ -13,7 +12,7 @@ class App extends React.Component {
                         <Route exact path="/" component={Home}/>
                         <Route path="/signup" component={Signup}/>
                         <Route path="/inscription" component={Signup}/>
-                        <Route path="/parent" component={Parent} />
+                        <Route path="/application" component={Parent} />
                     </Switch>
                 </BrowserRouter>
         );

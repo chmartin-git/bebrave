@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import Particles from "react-particles-js";
 
 import iconMore from '../../../assets/images/more.svg'
-import iconBack from '../../../assets/images/up-arrow.svg'
-
 
 import '../../../assets/style/css/main.min.css'
 
@@ -38,18 +36,18 @@ const particles = {
                     straight: false,
                     out_mode: "out",
                     bounce: false,
-                    attract: {enable: true, rotateX: 600, rotateY: 1200}
+                    attract: {enable: false, rotateX: 600, rotateY: 1200}
                 }
             },
     interactivity: {
         detect_on: "canvas",
         events: {
             onhover: {enable: true, mode: "bubble"},
-            onclick: {enable: true, mode: "push"},
+            onclick: {enable: true, mode: "repulse"},
             resize: true
         },
         modes: {
-            grab: {distance: 400, line_linked: {opacity: 1}},
+            grab: {distance: 400, line_linked: {opacity: 0.4}},
             bubble: {distance: 200, size: 10, duration: 2, opacity: 5, speed: 3},
             repulse: {distance: 100, duration: 0.4},
             push: {particles_nb: 4},
@@ -96,7 +94,7 @@ class Main extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className={this.state.more ? "front2 " + "active" : "front2 " + "inactive"}>
+                    <div className={this.state.more ? "front2 active" : "front2 inactive"}>
                         <div className="main-title">
                             {title}
                         </div>
