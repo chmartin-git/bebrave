@@ -14,7 +14,6 @@ class Main extends Component {
     }
 
     handleClick() {
-        console.log(this);
         this.setState((prev) => ({
             more: !prev.more
         }))
@@ -23,10 +22,10 @@ class Main extends Component {
     render() {
         const {title} = this.props;
         return (
-                <div id="main">
-                    <Page1 title={title} state={!this.state.more?"active":"inactive"} handler={this.handleClick} />
-                    <Page2 state={(this.state.more)?"active":"inactive"} handler={this.handleClick} />
-                </div>
+            <div id="main">
+                <Page1 title={title} state={!this.state.more?"active":"inactive"} handler={this.handleClick} />
+                <Page2 state={(this.state.more)?"active":"inactive"} handler={this.handleClick} />
+            </div>
         );
     }
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import Particles from "react-particles-js";
 import iconMore from "../../../assets/images/more.svg";
+import '../../../assets/style/css/Page1.min.css';
 
 const particles = {
     particles:

@@ -1,0 +1,57 @@
+@import 'mixins'
+.front2
+    position: relative
+    @include center
+    @include full
+    background-color: #afafaf
+    flex-direction: column
+    .back
+        @include center
+        height: 5%
+        width: 100%
+        background-color: #eaeaea
+        transition: all 0.2s linear
+        border-top: 1px solid #727272
+        &:hover
+            height: 6%
+            background-color: #ffffff
+
+
+        .container
+            display: flex
+            width: 7%
+            height: 100%
+            cursor: pointer
+            .text
+                @include center
+                flex: 0.8
+                font-size: 1em
+                font-family: "Open Sans", "Caviar Dreams", sans-serif
+
+    .home-content
+        display: flex
+        justify-content: center
+        height: 95%
+        width: 100%
+        background-color: #b1b1b1
+        overflow: auto
+        .home-band
+            width: 70%
+            height: auto
+            .zone
+                @include center
+                width: 100%
+                height: 50%
+                .inner-zone
+                    display: flex
+                    width: 90%
+                    height: 95%
+                    background-color: #fbfbfb
+                    .img-zone
+                        width: 35%
+                        height: 100%
+                    .text-zone
+                        width: 75%
+                        height: 100%
+                .right
+                    flex-direction: row-reverse

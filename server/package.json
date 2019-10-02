@@ -6,11 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "gc": "gulp compile",
-    "gw": "gulp watch"
+    "gw": "gulp watch",
+    "start": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^2.7.1",
     "express": "^4.17.1",
     "socket.io": "^2.2.0"
   },
@@ -19,6 +21,7 @@
     "gulp-changed": "^4.0.1",
     "gulp-clean-css": "^4.2.0",
     "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2"
+    "gulp-sass": "^4.0.2",
+    "nodemon": "^1.19.3"
   }
 }

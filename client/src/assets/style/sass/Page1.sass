@@ -1,0 +1,54 @@
+@import 'mixins'
+.front1
+    position: relative
+    @include center
+    @include full
+    background-color: #242424
+    flex-direction: column
+
+    .particles
+        position: absolute
+        z-index: 2
+
+    .main-title
+        color: #232323
+        width: 20%
+        text-align: center
+        background-color: #ffffff
+        font-family: "Open Sans", "Caviar Dreams", sans-serif
+        padding: 20px
+        font-size: 3em
+        z-index: 3
+        user-select: none
+    .more
+        @include center
+        position: absolute
+        bottom: 0
+        height: 5%
+        width: 100%
+        background-color: #eaeaea
+        transition: all 0.2s linear
+        z-index: 3
+        &:hover
+            height: 6%
+            background-color: #ffffff
+            img
+                transform: rotate(90deg)
+        .container
+            display: flex
+            width: 12%
+            height: 100%
+            cursor: pointer
+            .text
+                @include center
+                flex: 0.8
+                font-size: 1em
+                font-family: "Open Sans", "Caviar Dreams", sans-serif
+            .logo
+                @include center
+                flex: 0.2
+                img
+                    filter: grayscale(1)
+                    width: 20px
+                    height: auto
+                    transition: all 0.2s linear

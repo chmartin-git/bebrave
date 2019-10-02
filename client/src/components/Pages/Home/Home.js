@@ -5,10 +5,10 @@ import '../../../assets/style/css/home.min.css'
 
 const Home = () => {
     return (
-        <div className="home">
+        <main className="home">
             <Navbar />
             <Main title="BEBRAVE"/>
-        </div>
+        </main>
     )
 };
 
