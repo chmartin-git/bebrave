@@ -1,10 +1,8 @@
-const initStore = {
-    data: [],
-    user: [],
-};
+import authReducer from "./authReducer";
+import { combineReducers } from 'redux'
 
-const rootReducer = (state = initStore, action) => {
-
-};
+const rootReducer = combineReducers({
+   auth: authReducer
+});
 
 export default rootReducer;
