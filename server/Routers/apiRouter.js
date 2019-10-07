@@ -4,9 +4,8 @@ import database from "../mysqlDatabase";
 const apiRouter = Router();
 const db = new database();
 
-apiRouter.get('/users', (req, res) => {
-    db.query("SELECT * FROM users", [], (data) => {
-        console.log(data);
+apiRouter.post('/users', (req, res) => {
+    db.query("SELECT * FROM users WHERE User_pseudo = ? ", [req.body.user], (data) => {
         res.json(data);
     });
 });
