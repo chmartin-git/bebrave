@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from "./Navbar/Navbar";
 import Main from "./Main";
-import '../../../assets/style/css/home.min.css'
+import '../../../assets/style/css/Home/home.min.css'
 
 const Home = () => {
     return (

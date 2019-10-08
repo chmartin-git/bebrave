@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 
-import '../../../../assets/style/css/navbar.min.css'
+import '../../../../assets/style/css/Home/navbar.min.css'
 import logo from '../../../../assets/images/logo.png'
 import Logo from "./Logo";
 

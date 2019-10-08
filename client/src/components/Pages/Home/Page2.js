@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../../assets/style/css/Page2.min.css'
+import '../../../assets/style/css/Home/Page2.min.css'
 import InfoZone from "./InfoZone";
 
 const Page2 = ({state, handler}) => (

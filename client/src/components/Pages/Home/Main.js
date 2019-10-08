@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import '../../../assets/style/css/main.min.css'
+import '../../../assets/style/css/Home/main.min.css'
 import Page1 from "./Page1";
 import Page2 from "./Page2";
 

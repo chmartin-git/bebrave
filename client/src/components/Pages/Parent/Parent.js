@@ -1,9 +1,14 @@
-import React from 'react'
+import React, {Component} from 'react';
+import '../../../assets/style/css/Parent/Parent.min.css'
 
-const Parent = () => (
-    <div id='parent'>
-        test
-    </div>
-);
+class Parent extends Component {
+    render() {
+        return (
+                <div id="parent">
 
-export default Parent
+                </div>
+        );
+    }
+}
+
+export default Parent;
