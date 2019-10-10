@@ -2,14 +2,9 @@ import React from 'react';
 import {NavLink} from "react-router-dom";
 
 import '../../../../assets/style/css/Home/navbar.min.css'
-import logo from '../../../../assets/images/logo.png'
-import Logo from "./Logo";
-
 const Navbar = () => {
     return (
             <div className="navbar">
-
-                <Logo src={logo} alt="Logo image" className="logo-wrapper" />
 
                 <div className="button-wrapper">
                     <div className="input-inner">

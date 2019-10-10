@@ -4,9 +4,9 @@ import '../../../assets/style/css/Parent/Parent.min.css'
 class Parent extends Component {
     render() {
         return (
-                <div id="parent">
+            <div id="parent">
 
-                </div>
+            </div>
         );
     }
 }

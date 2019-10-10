@@ -54,12 +54,12 @@ const particles = {
     retina_detect: true
 };
 
-const Page1 = ({state, title, handler}) => (
+const Page1 = ({state, title, img, handler}) => (
         <div className={`front1 ${state}`}>
             <Particles className="particles" width={window.outerWidth + "px"}
                        height={window.outerHeight + "px"} params={particles}/>
             <div className="main-title">
-                {title}
+                <img src={img} alt="logo"/>
             </div>
             <div className="more" onClick={handler}>
                 <div className="container">
