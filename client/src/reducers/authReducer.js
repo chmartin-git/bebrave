@@ -1,4 +1,6 @@
-const initState = {};
+const initState = {
+    isLogged: false
+};
 
 const authReducer = (state = initState, action) => {
 

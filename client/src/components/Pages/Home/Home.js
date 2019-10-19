@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from "./Navbar/Navbar";
+import Navbar from "../Navbar/Navbar";
 import Main from "./Main";
 import '../../../assets/style/css/Home/home.min.css'
 

@@ -3,6 +3,8 @@ const app = express();
 
 app.get("/api/test", (req,res) => {
     res.render("index.ejs");
-}).listen(3001);
-
-
+})
+        .get('/:other', (req,res) => {
+            res.redirect(`/${req.params.other}`);
+        })
+        .listen(3001);
