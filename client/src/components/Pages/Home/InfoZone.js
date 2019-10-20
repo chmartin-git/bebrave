@@ -13,7 +13,7 @@ class InfoZone extends Component {
                 <div className="zone">
                     <div className={"inner-zone " + align}>
                         <div className="img-zone">
-                            <img src={this.props.img} alt="Illustration image"/>
+                            <img src={this.props.img} alt="Illustration"/>
                         </div>
                         <div className="text-zone">
                             {this.props.text}

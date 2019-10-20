@@ -1,12 +1,20 @@
+// Dependencies import
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
-import { createStore} from "redux";
+import {createStore, compose, applyMiddleware} from "redux";
 import { Provider } from 'react-redux';
-import rootReducer from "./reducers/rootReducer";
+import thunk from "redux-thunk";
+//reducers import
+import rootReducer from "./store/reducers/rootReducer";
 
-// Redux async for databases queries
+// Components import
+import App from './App'
 
-const store = createStore(rootReducer);
+
+const enhancers = compose(
+        applyMiddleware(thunk)
+);
+
+const store = createStore(rootReducer, enhancers);
 
 ReactDOM.render(<Provider store={store}> <App /></Provider>, document.getElementById("root"));
