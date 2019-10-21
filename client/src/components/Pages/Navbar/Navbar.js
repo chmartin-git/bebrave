@@ -9,13 +9,13 @@ import {Redirect} from "react-router";
 
 class Navbar extends Component {
 
-
     constructor(props){
         super(props);
         this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick(t){
+
     }
 
     render(){
