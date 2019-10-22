@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import LoginInputs from "./LoginInputs";
 import {NavLink} from "react-router-dom";
-
+import '../../../assets/style/css/Navbar/disconnectedWrapper.min.css'
 
 
 class DisconnectedWrapper extends Component {

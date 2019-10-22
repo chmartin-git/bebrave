@@ -1,0 +1,22 @@
+@import '../mixins'
+
+.connected-wrapper
+    @include center
+
+    .button-inner
+        @include center
+        height: 100%
+        flex: 0.25
+        button
+            width: 70%
+            height: 40%
+            border: none
+            color: white
+            cursor: pointer
+            transition: all 0.2s ease-in
+
+        .button-logout
+            background-color: #cc4424
+            &:hover
+                background-color: #aa3a1f
+

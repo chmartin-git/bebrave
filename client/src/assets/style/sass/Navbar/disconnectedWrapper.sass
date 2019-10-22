@@ -1,0 +1,52 @@
+@import '../mixins'
+
+.disconnected-wrapper
+    @include center
+    width: 30%
+    height: 100%
+
+    .input-inner
+        @include center
+        height: 100%
+        flex: 0.5
+
+        .input-wrapper
+            @include center
+            height: 100%
+            flex: 0.5
+            input
+                width: 90%
+                height: 25%
+    .button-inner
+        @include center
+        height: 100%
+        flex: 0.25
+        button
+            width: 70%
+            height: 40%
+            border: none
+            color: white
+            cursor: pointer
+            transition: all 0.2s ease-in
+            .inner-link
+                width: 100%
+                height: 100%
+                @include center
+                color: white
+                text-decoration: none
+
+        .button-login
+            background-color: #2ecc71
+            &:hover
+                background-color: #27aa5e
+
+        .button-logout
+            background-color: #cc4424
+            &:hover
+                background-color: #aa3a1f
+
+        .button-signup
+            background-color: #4f9ae1
+            &:hover
+                background-color: #376b9c
+
