@@ -2,5 +2,5 @@
 /client/node_modules/
 /server/node_modules/
 /.idea/vcs.xml
+/server/.env
 /server/config/
-/client/src/config/
