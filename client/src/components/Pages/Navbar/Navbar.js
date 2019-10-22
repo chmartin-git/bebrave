@@ -14,10 +14,6 @@ class Navbar extends Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick(t){
-
-    }
-
     render(){
         return (
             <div className="navbar">
@@ -25,7 +21,7 @@ class Navbar extends Component {
                     this.props.isLogged && <Redirect to="/application"/>
                 }
                 {!this.props.isLogged ?
-                    <DisconnectedWrapper login={this.props.login} onClick={(e) => this.handleClick("login")}/>
+                    <DisconnectedWrapper login={this.props.login}/>
                     :
                     <ConnectedWrapper />
                 }
@@ -40,8 +36,9 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
     /*
-    * TODO : - modify functions' actions
-    *        - create all actions
+    * TODO :
+    *  - modify functions' actions
+    *  - create all actions
     */
     return {
         login: (payload = {}) => dispatch(validateLogin(payload))
