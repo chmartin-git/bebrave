@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export const VALIDATE_LOGIN = "auth:validateLogin";
 export const VERIFY_LOGIN = "auth:verifyLogin";
 
@@ -9,11 +11,11 @@ export const validateLoginAsync = (payload) => ({
 export const validateLogin = (payload) => (
     (dispatch, getState) => {
         // query data from mysql server here using async call
-        const asyncEx = new Promise((resolve, reject) => {
-            fetch("/lien/vers/api").then(res => res.json()).then( res => resolve(res));
-        });
-
-        asyncEx.then((fetchedData) => {
+        console.log(payload);
+        axios.post('/api/users', {user: payload.pseudo}).then((fetchedData) => {
+            const {auth} = getState();
+            console.log("state: ", auth);
+            console.log("data: ", fetchedData);
             dispatch(validateLoginAsync(fetchedData));
         })
     }

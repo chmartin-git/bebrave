@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import '../../../assets/style/css/navbar.min.css'
+import '../../../assets/style/css/Navbar/navbar.min.css'
 import {validateLogin} from "../../../store/actions";
 import ConnectedWrapper from "./ConnectedWrapper";
 import DisconnectedWrapper from "./DisconnectedWrapper";
@@ -11,7 +11,6 @@ class Navbar extends Component {
 
     constructor(props){
         super(props);
-        this.handleClick = this.handleClick.bind(this);
     }
 
     render(){
