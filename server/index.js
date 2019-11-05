@@ -1,10 +1,16 @@
 import express from 'express'
 import cors from 'cors'
 import apiRouter from './Routes/apiRouter';
+import mongoose from 'mongoose';
 
-const dotenv = require('dotenv');
+require('dotenv').config();
 
-dotenv.config();
+mongoose.connect(process.env.CREDENTIALS, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        },
+        (err) => console.log("connected to database"));
+
 
 const app = express();
 app.use(cors());
