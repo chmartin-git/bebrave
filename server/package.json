@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@hapi/joi": "^16.1.7",
     "cors": "^2.8.5",
     "dotenv": "^8.1.0",
     "ejs": "^2.7.1",

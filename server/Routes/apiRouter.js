@@ -1,15 +1,28 @@
-import { Router } from 'express';
-// import database from "../mysqlDatabase";
-import User from '../model/User';
+import {Router} from 'express';
 
-const apiRouter = Router();
+// UNCOMMENT NEXT LINES TO INTEGRATE MYSQL
+
+// import database from "../mysqlDatabase";
 // const db = new database();
 
-apiRouter.post("/login", (req, res) =>  {
+import User from '../model/User';
+import Joi from "@hapi/joi";
 
+
+const userValidationSchema = new Joi.object({
+    name: Joi.string().alphanum().required(),
+    password: Joi.string().required(),
+    email: Joi.string().email().required()
 });
 
+const apiRouter = Router();
+
 apiRouter.post("/register", async (req, res) => {
+
+    const { error } = userValidationSchema.validate(req.body);
+
+    if (error) return res.status(400).send(error.details[0].message);
+
     const newUser = new User({
         name: req.body.name,
         password: req.body.password,
@@ -26,6 +39,9 @@ apiRouter.post("/register", async (req, res) => {
     }
 });
 
+apiRouter.post("/login", (req, res) => {
+
+});
 
 
 export default apiRouter;
