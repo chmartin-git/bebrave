@@ -1,9 +1,19 @@
 import mongoose from 'mongoose';
+import Joi from '@hapi/joi';
 
 const userSchema = new mongoose.Schema({
-    name: {
+    firstName: {
         type: String,
         required: true
+    },
+    lastName: {
+        type: String,
+        required: true
+    },
+    pseudo: {
+        type: String,
+        required: true,
+        max: 20
     },
     email: {
         type: String,
@@ -20,5 +30,17 @@ const userSchema = new mongoose.Schema({
         default: Date.now
     }
 });
+
+export function registerValidation(params) {
+
+    const userValidationSchema = new Joi.object({
+        firstName: Joi.string().alphanum().required(),
+        lastName: Joi.string().alphanum().required(),
+        pseudo: Joi.string().alphanum().required().max(20),
+        password: Joi.string().required().max(1024),
+        email: Joi.string().email().required().max(256)
+    });
+    return userValidationSchema.validate(params);
+}
 
 export default new mongoose.model('User', userSchema);
