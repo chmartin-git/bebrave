@@ -43,4 +43,12 @@ export function registerValidation(params) {
     return userValidationSchema.validate(params);
 }
 
+export function loginValidation(params) {
+    const userValidationSchema = new Joi.object({
+        pseudo: Joi.string().alphanum().required().max(20),
+        password: Joi.string().required().max(1024)
+    });
+    return userValidationSchema.validate(params);
+}
+
 export default new mongoose.model('User', userSchema);
