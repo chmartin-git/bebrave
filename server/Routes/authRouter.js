@@ -5,8 +5,8 @@ import jwt from 'jsonwebtoken';
 import fs from 'fs';
 
 // Loading keys
-const privateKey = fs.readFileSync('../config/private.key', 'utf8');
-const publicKey = fs.readFileSync('../config/public.key', 'utf8');
+const privateKey = fs.readFileSync(__dirname + '/../config/private.key', 'utf8');
+const publicKey = fs.readFileSync(__dirname + '/../config/public.key', 'utf8');
 
 // Token signing options
 const signOptions = {
@@ -20,9 +20,9 @@ const verifyOptions = {
     algorithm:  ["RS256"]
 };
 
-const apiRouter = Router();
+const authRouter = Router();
 
-apiRouter.post("/register", async (req, res) => {
+authRouter.post("/register", async (req, res) => {
     // Joi validation
     const { error } = registerValidation(req.body);
 
@@ -64,7 +64,7 @@ apiRouter.post("/register", async (req, res) => {
     }
 });
 
-apiRouter.post("/login", async (req, res) => {
+authRouter.post("/login", async (req, res) => {
     const { error } = loginValidation(req.body);
     if (error) return res.status(400).json({error: error.details[0].message});
 
@@ -81,4 +81,4 @@ apiRouter.post("/login", async (req, res) => {
 });
 
 
-export default apiRouter;
+export default authRouter;
