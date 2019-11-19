@@ -5,6 +5,7 @@ const initState = {
 };
 
 const authReducer = (state = initState, action) => {
+    console.log(action.type);
     switch (action.type) {
         case VALIDATE_LOGIN:
             console.log(action.payload);
