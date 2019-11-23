@@ -7,6 +7,7 @@ export const validateLoginAsync = payload => ({
     payload: payload
 });
 
+// set a loading flag in store
 export const verifyLoginAsync = payload => ({
     type: VERIFYING_LOGIN,
     payload: payload
@@ -17,9 +18,12 @@ export const errorLogin = payload => ({
     payload: payload
 });
 
+
 export const validateLogin = payload => {
     return (dispatch, getState) => {
         dispatch(verifyLoginAsync(payload));
+
+        // Request to the api ( backend server )
         axios({
             method: "post",
             url: "/auth/login",
@@ -33,9 +37,11 @@ export const validateLogin = payload => {
                 dispatch(errorLogin({message}));
             }
             else {
+                // Store the token inside client cache
                 const token = responseData.headers["auth-token"];
                 localStorage.setItem('token', token);
             }
+
             dispatch(validateLoginAsync(responseData.data.message));
         }).catch(err => {
             console.log({err});

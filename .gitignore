@@ -4,3 +4,4 @@
 /.idea/vcs.xml
 /server/.env
 /server/config/
+/server/logs/log
