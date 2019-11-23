@@ -2,7 +2,7 @@ import React from 'react'
 
 import {NavLink} from "react-router-dom";
 
-const Signup = () => (
+const Register = () => (
     <div id='signup'>
         Signup
         <NavLink to='/'>
@@ -11,4 +11,4 @@ const Signup = () => (
     </div>
 );
 
-export default Signup
+export default Register

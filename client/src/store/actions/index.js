@@ -1,17 +1,25 @@
 import axios from "axios";
+import {VALIDATE_LOGIN, ERROR_LOGIN, VERIFYING_LOGIN} from "../const/constants";
 
-export const VALIDATE_LOGIN = "auth:validateLogin";
-export const ERROR_LOGIN = "auth:errorLogin";
-export const VERIFY_LOGIN = "auth:verifyLogin";
 
 export const validateLoginAsync = payload => ({
     type: VALIDATE_LOGIN,
     payload: payload
 });
 
+export const verifyLoginAsync = payload => ({
+    type: VERIFYING_LOGIN,
+    payload: payload
+});
+
+export const errorLogin = payload => ({
+    type: ERROR_LOGIN,
+    payload: payload
+});
+
 export const validateLogin = payload => {
     return (dispatch, getState) => {
-        console.log(payload);
+        dispatch(verifyLoginAsync(payload));
         axios({
             method: "post",
             url: "/auth/login",
@@ -20,16 +28,14 @@ export const validateLogin = payload => {
                 password: payload.password
             }
         }).then( responseData => {
-
             if (responseData.status !== 200){
-                //create a dispatch event for bad connection
                 const message = responseData.data.message;
+                dispatch(errorLogin({message}));
             }
             else {
                 const token = responseData.headers["auth-token"];
                 localStorage.setItem('token', token);
             }
-
             dispatch(validateLoginAsync(responseData.data.message));
         }).catch(err => {
             console.log({err});

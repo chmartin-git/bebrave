@@ -2,7 +2,7 @@ import React from 'react'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import Home from './components/Pages/Home/Home'
 import Parent from './components/Pages/Parent/Parent'
-import Signup from './components/Pages/Signup/Signup'
+import Register from './components/Pages/Register/Register'
 
 class App extends React.Component {
     render() {
@@ -10,8 +10,8 @@ class App extends React.Component {
                 <BrowserRouter>
                     <Switch>
                         <Route exact path="/" component={Home}/>
-                        <Route path="/signup" component={Signup}/>
-                        <Route path="/inscription" component={Signup}/>
+                        <Route path="/signup" component={Register}/>
+                        <Route path="/inscription" component={Register}/>
                         <Route path="/application" component={Parent} />
                     </Switch>
                 </BrowserRouter>
