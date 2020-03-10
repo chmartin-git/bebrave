@@ -51,7 +51,7 @@ De plus il sera nécessaire de créer un fichier **".env"** à la racine du rép
  
  Format du fichier .env:
  
- `CREDENTIALS=[infoconnexionserveur]`
+ `CREDENTIALS=[infoconnexionmongodb]`
  
  et un paramètre optionel :
   
