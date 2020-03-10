@@ -41,6 +41,35 @@ puis
 
 Pour lancer le serveur back-end il faut se rendre dans le dossier 'serveur' et lancer la commande
 
+Afin que le serveur back-end se lance il est nécessaire de créer une paire de clé RSA publique et privé à mettre dans un
+ dossier "config" situé à la racine du répertoire server. Les clés doivent être sauvegardées sous le nom **"private.key"** 
+ et **"public.key"**.
+ 
+
+De plus il sera nécessaire de créer un fichier **".env"** à la racine du répertoire server. Ce fichier doit contenir les
+ informations de connexion au serveur mongodb.
+ 
+ Format du fichier .env:
+ 
+ `CREDENTIALS=[infoconnexionserveur]`
+ 
+ et un paramètre optionel :
+  
+ /!\ **attention à changer le port proxy situé dans client/package.json afin que ceux-ci coïncident**
+ 
+ `PORT=[PORT]`
+
+ L'arborescence finale étant : 
+
+bebrave /<br>
+|____ server /<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_____ .env<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_____ config /<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_______private.key<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_______public.key
+
+Vous pouvez ensuite lancer le serveur en éxécutant la commande:
+
 `npm start`
 
 /!\ **Cette commande vérrouille l'invité de commande pour quitter appuyer CTRL+C**
